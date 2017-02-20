@@ -1,0 +1,195 @@
+/*  style.css file
+	made by ApTr13
+	for the APTR13 BLOG application
+*/
+* {
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+h1 {
+    text-align: center;
+    font-size: 90px;
+    text-shadow: 3px 3px 3px black;
+}
+h2 {
+    text-align: center;
+    margin: 0px;
+}
+h4 {
+    font-size: 25px;
+    font-weight: bold;
+}
+h5 {
+    font-size: 18px;
+    font-weight: bold;
+}
+p.username {
+    font-size: 30px;
+    color: #088C1B;
+    font-weight: bold;
+    display: inline;
+}
+hr {
+    border: 2px solid white;
+    height: 0px;
+}
+a {
+    color: #4B0091;
+}
+a:hover {
+    text-decoration: none;
+    color: #8831FF;
+}
+body {
+    z-index: -999;
+    background-color: #D0D0D0;
+}
+.container {
+    background-color: #FBCEC0;
+    min-height: 900px;
+    box-shadow: 5px 5px 5px 5px #5D5C5C;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.post-container {
+    border: 3px solid #ED9C00;
+    border-radius: 5px;
+    background-color: #E2EBFE;
+    font-size: 16px;
+    text-align: justify;
+}
+.comment {
+    font-size: 20px;
+    background-color: white;
+    border-radius: 4px;
+    border: 2px solid #ED9C00;
+}
+.udalogo {
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    margin: 10px;
+    border: 5px solid white;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px black;
+}
+.button {
+    width: 300px;
+}
+.buttoninput1 {
+    background-color: white;
+    color: #8A028C;
+    border: 2px solid #8A028C;
+    border-radius: 5px;
+}
+.buttoninput2 {
+    background-color: white;
+    color: #05D3E6;
+    border: 2px solid #05D3E6;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+}
+.error {
+    color: red;
+}
+.loginerror {
+    text-align: center;
+}
+.blogcontent {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.newcomment {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+/*Footer*/
+
+.developer div {
+    background-color: white;
+    margin-top: 20px;
+}
+.icon {
+    color: white;
+    position: relative;
+    top: 10px;
+    display: inline-block;
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    text-indent: -999em;
+    text-align: left;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.courtesy {
+    border-right: 2px solid white;
+}
+.developer-links {
+    height: 110px;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+.facebook {
+    background: url("social-1_logo-facebook.svg");
+}
+.github {
+    background: url("social-1_logo-github.svg");
+}
+.insta {
+    background: url("social-1_logo-instagram.svg");
+}
+.gmail {
+    background: url("gmail.png");
+    opacity: 0.8;
+}
+.website {
+    display: inline;
+    top: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #474747;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.website:hover {
+    color: white;
+    text-decoration: none;
+}
+/*Formatting the Scrollbar*/
+
+::-webkit-scrollbar {
+    width: 12px;
+    z-index: -99;
+    opacity: 0;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    -webkit-border-radius: 10px;
+    opacity: z-index: -99;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #E0E0E0;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #E0E0E0;
+}
