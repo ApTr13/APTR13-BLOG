@@ -602,6 +602,7 @@ class EditComment(HandlerFunction):
 
 # Routing links of the application with their respective classes
 app = webapp2.WSGIApplication([('/signup', RegisterHandler),
+                               ('/', BlogFront),
                                ('/login', Login),
                                ('/logout', Logout),
                                ('/blog/?', BlogFront),
