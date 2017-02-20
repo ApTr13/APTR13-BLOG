@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>APTR13 BLOG</title>
+  <!-- Integrating all CSS files. -->
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">  
+  <!-- Defining character encoding. -->
+  <meta charset="utf-8">
+  <!-- Setting Viewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+  <!-- Main container block of the app-->
+  <div class="container">
+    <header class="row">
+      <div class="col-lg-2">
+        <img src="/static/logo.jpg" class="udalogo" alt="Udacity Logo">
+      </div>
+      <div class="col-lg-10">
+        <h1><a href="/blog">APTR13 BLOG</a></h1>
+      </div>
+    </header>
+
+    <!-- Rendering links after checking if a user is logged in or not -->
+    {% if currentuser == "" %}  
+    <div class = "row">
+      <div class = "col-lg-6">
+        <h2><a class="buttoninput1" href='/signup'>Signup</a></h2>
+      </div>
+      <div class = "col-lg-6">
+        <h2><a class="buttoninput1" href='/login'>Login</a></h2>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if currentuser != "" %}
+    <div class="row">    
+      <div class = "col-lg-6">
+        <h2><a class="buttoninput1" href='/blog/newpost'>New Post</a></h2>
+      </div>
+      <div class = "col-lg-6">
+        <h2><a class="buttoninput1" href='/logout'>Logout</a></h2>
+      </div>
+      <div class = "col-lg-12">
+        <h2>Logged in as - <p class="username">{{currentuser}}</p></h2>
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="hr">
+      <hr>
+    </div>
+
+    <!-- Section that renders variable blocks of pages depending on Handler Function -->
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <!-- Links to Developer's profiles. -->
+    <div class="developer col-lg-12 col-md-6 col-sm-12 col-xs-12">
+      <div class="col-lg-12 col-md-12 text-center developer-links">
+        <h3 class="text-center">About The Developer</h3>
+        <a href="http://aptr13.me" target="_blank" class="website">ApTr13</a>
+        <a href="https://github.com/ApTr13" target="_blank" class="github icon"></a>
+        <a href="https://www.facebook.com/people/Apurva-Tripathi/100012682908223" target="_blank" class="facebook icon"></a>
+        <a href="https://www.instagram.com/aptr13/" target="_blank" class="insta icon"></a>
+        <a href="mailto:apurvatripathi13@gmail.com" class="gmail icon"></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class=" row">
+        <div class="col-lg-1"></div>
+        <div class="subject col-lg-4">
+            <h4><a href="/blog/{{(post.key().id())}}">{{post.subject}}</a></h4>
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="date col-lg-4 text-right">
+            <h4>{{post.last_modified.strftime("%b %d, %Y")}}</h4>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    
+    <div class="content post-container col-lg-12">{{post.content}}</div>
+    <div class="col-lg-8"></div>
+    <div class="author text-right col-lg-3">
+        <h4>WRITTEN BY - {{post.author}}<h4>
+    </div>
+
+    <div class="error col-lg-12">
+        <h2>{{msg}}</h2>
+    </div>
+    <hr>
+
+    <form method="post">
+        <h2>Write a New Comment</h2>
+        <div class="col-lg-12">
+            <textarea class="newcomment" name='comment'>{{comment}}</textarea>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+                <h5><input class="buttoninput1" type = "submit" name = "button" value = "Add Comment"></h5>
+            </div>
+            <div class="col-lg-1">
+                <h5><input class="buttoninput1" type = "submit" name = "button" value = "Cancel"></h5>
+            </div>
+
+            <div class="col-lg-2">
+                <h5>
+                    <label class="buttoninput1">
+                        {% if like=="on" %}
+                        Like <input type="checkbox" name = "like" checked >
+                        {% else %}
+                        Like <input type="checkbox" name = "like" unchecked >
+                        {% endif %}
+                    </label>
+                </h5>
+             </div>
+        </div>
+    </form>
+
+    <hr>
+    <h2>Comments</h2>
+    {% for c in comments %}
+    <div class="row">
+        <div class="commentor col-lg-3">
+            <h5>Said By- <p class="username" style="font-size: 20px;">{{c.commentor}}</p></h5>
+        </div>
+        <div class="col-lg-4"></div>
+        <div class="commentdate col-lg-3">
+            <h5>{{c.last_modified.strftime("%b %d, %Y")}}</h5>
+        </div>
+        <div class="content col-lg-12">
+            <p class="comment">{{c.comment}}</p>
+        </div>
+        <div class="col-lg-1">
+            <h5><a class="buttoninput1" href="/blog/comment/edit/?postid={{(post.key().id())}}&amp;commentid={{(c.key().id())}}">Edit</a></h5>
+        </div>
+        <div class="col-lg-1">
+            <h5><a class="buttoninput1" href="/blog/comment/delete/?postid={{(post.key().id())}}&amp;commentid={{(c.key().id())}}">Delete</a></h5>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+{% endblock %}

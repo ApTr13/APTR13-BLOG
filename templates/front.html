@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<!-- Home Page of the blogs showing all the bolgs -->
+    {%  for post in posts %}
+	        <div class=" row">
+	        	<div class="col-lg-1"></div>
+	            <div class="subject col-lg-4">
+	            	<h4><a href="/blog/{{(post.key().id())}}">{{post.subject}}</a></h4>
+	            </div>
+	            <div class="col-lg-2"></div>
+	            <div class="date col-lg-4 text-right">
+	            	<h4>{{post.last_modified.strftime("%b %d, %Y")}}</h4>
+	            </div>
+	            <div class="col-lg-1"></div>
+	        </div>
+	        
+	        <div class="content post-container col-lg-12">{{post.content}}</div>
+
+	        {% if currentuser != "" %}
+		        <div class="buttons row">
+		        	<div class="col-lg-1"></div>
+		        	<div class="col-lg-2">
+			            <h4><a class="buttoninput2" href="/blog/edit/?postid={{(post.key().id())}}"> Edit </a></h4>
+		            </div>
+		            <div class="col-lg-2">
+			            <h4><a class="buttoninput2" href="/blog/delete/{{(post.key().id())}}">Delete</a></h4>
+		            </div>
+		            <div class="col-lg-2">
+			            <h4><a class="buttoninput2" href="/blog/comment/?postid={{(post.key().id())}}">Comment</a></h4>
+			        </div>
+			        <div class="author col-lg-5">
+			        	<h4>WRITTEN BY - {{post.author}}<h4>
+			        </div>
+		        </div>
+		    {% endif %}
+
+		    {% if currentuser == "" %}
+		    	<div class="buttons row">
+		    		<div class="col-lg-6"></div>
+		    		<div class="author col-lg-5">
+			        	<h4>WRITTEN BY - {{post.author}}<h4>
+			        </div>
+		        </div>
+		    {% endif %}
+
+	    <hr />
+
+    {% endfor %}
+
+{% endblock %}
